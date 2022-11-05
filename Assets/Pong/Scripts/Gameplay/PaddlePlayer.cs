@@ -97,16 +97,7 @@ public class PaddlePlayer : BasePaddle
     protected override void Update()
     {
         if (Managers.Input.isActive)
-        {
-            // if (Managers.Input.inputType == InputMethod.KeyboardInput)
-            //     KeyboardInput();
-            // else if (Managers.Input.inputType == InputMethod.TouchLRInput)
-            //     TouchLRInput();
-            // else
             DragInput();
-
-            // KeyboardInput();
-        }
     }
 
     void KeyboardInput()

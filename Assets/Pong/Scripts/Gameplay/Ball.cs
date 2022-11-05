@@ -1,14 +1,4 @@
-﻿//  /*********************************************************************************
-//   *********************************************************************************
-//   *********************************************************************************
-//   * Produced by Skard Games										                  *
-//   * Facebook: https://goo.gl/5YSrKw											      *
-//   * Contact me: https://goo.gl/y5awt4								              *											
-//   * Developed by Cavit Baturalp Gürdin: https://tr.linkedin.com/in/baturalpgurdin *
-//   *********************************************************************************
-//   *********************************************************************************
-//   *********************************************************************************/
-
+﻿
 using UnityEngine;
 using System.Collections;
 
@@ -74,6 +64,7 @@ public class Ball : MonoBehaviour
             Vector2 dir = new Vector2(temp, x).normalized;
 
             lastTouchedPaddle = other.gameObject.GetComponent<BasePaddle>();
+            Debug.Log("paddle hit");
 
             if (BasePaddle.RubySwordGlobalActivattion)
             {
@@ -92,25 +83,25 @@ public class Ball : MonoBehaviour
                 }
                 else
                 {
-
-                    //ballBody.velocity = (dir * velocity.magnitude);
-                    //Debug.LogError("decrasing... value" + ((Managers.PowUps.rubySwordData.SpeedIncrease * ballBody.velocity) / 100));
-                    //ballBody.velocity -= ((Managers.PowUps.rubySwordData.SpeedIncrease * ballBody.velocity) / 100);
+                    Debug.Log("else of RubySwordActivated");
+                    ballBody.velocity = dir * velocity.magnitude;
 
                 }
             }
             else
             {
+                Debug.Log("else of RubySwordGlobalActivattion");
                 if (prevVelocity == 0)
                 {
                     ballBody.velocity = dir * velocity.magnitude * speedMultiplier;
+                    Debug.Log("if prevVelocity=0");
                 }
                 else
                 {
                     ballBody.velocity = dir * prevVelocity;
                     prevVelocity = 0;
+                    Debug.Log("else of prevVelocity=0");
                 }
-
             }
 
             if (lastTouchedPaddle.GetType().Name.Equals(nameof(PaddlePlayer)))

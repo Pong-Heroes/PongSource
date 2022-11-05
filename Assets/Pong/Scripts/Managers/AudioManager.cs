@@ -15,6 +15,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip menuClickSound;
     public AudioClip hoverSound;
     public AudioClip collisionSound;
+    public AudioClip countDownSound;
     public AudioClip loseSound;
     public AudioClip winSound;
     public AudioClip losePointSound;
@@ -118,6 +119,15 @@ public class AudioManager : MonoBehaviour
             return;
 
         soundSource.clip = collisionSound;
+        soundSource.Play();
+    }
+
+    public void PlayCountSound()
+    {
+        if (!soundSource)
+            return;
+
+        soundSource.clip = countDownSound;
         soundSource.Play();
     }
 

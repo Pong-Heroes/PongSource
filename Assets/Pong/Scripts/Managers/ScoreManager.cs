@@ -16,7 +16,6 @@ public class ScoreManager : MonoBehaviour
     {
         get
         {
-            //Debug.Log("Winner");
             var playerWon = playerScore > aiScore;
 
             if (playerWon)
@@ -49,6 +48,7 @@ public class ScoreManager : MonoBehaviour
 
     public void OnScore(PaddleOwner scorer)
     {
+        BasePaddle.RubySwordGlobalActivattion = false;
         if (scorer == PaddleOwner.PLAYER)
         {
             playerScore++;

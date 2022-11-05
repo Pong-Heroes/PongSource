@@ -59,14 +59,14 @@ public class KickOffState : _StatesBase
              .OnStepComplete(() =>
                 {
                     countdown--;
-                    AudioManager.Audio.PlayCollisionSound();
+                    AudioManager.Audio.PlayCountSound();
                     Managers.UI.inGameUI.SetInfoText(countdown.ToString(), true);
                 })
              .OnComplete(() =>
                 {
                     Managers.UI.inGameUI.SetInfoText("", false);
                     KickOff();
-                    AudioManager.Audio.PlayClickSound();
+                    //AudioManager.Audio.PlayClickSound();
                     Managers.UI.inGameUI.score_bot.enabled = true;
                     Managers.PowUps.canSpawnPowerup = true;
                     Managers.Match.ball.ballBody.velocity = _ballVelocity;

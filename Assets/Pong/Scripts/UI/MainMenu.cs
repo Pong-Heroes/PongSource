@@ -139,7 +139,7 @@ public class MainMenu : PersistentSingleton<MainMenu>
         Constants.PlayingAsGuest = false;
         AudioManager.Audio.PlayClickSound();
         Managers.UI.ActivateUI(Menus.LOGIN);
-        AudioManager.Audio.PlayLoginMusic();
+        //AudioManager.Audio.PlayLoginMusic();
     }
 
 }

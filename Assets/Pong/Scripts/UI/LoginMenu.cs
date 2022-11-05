@@ -108,7 +108,7 @@ public class LoginMenu : MonoBehaviour
         this.StatusText.text = $"";
         StopCoroutine(animateRoutine);
         Managers.UI.ActivateUI(Menus.MAIN);
-        AudioManager.Audio.PlayLobbyMusic();
+        //AudioManager.Audio.PlayLobbyMusic();
     }
 
     private void OnPlayAsGuest()
@@ -127,7 +127,7 @@ public class LoginMenu : MonoBehaviour
         MakeInteractable(true);
         this.StatusText.text = $"";
         Managers.UI.ActivateUI(Menus.MAIN);
-        AudioManager.Audio.PlayLobbyMusic();
+        //AudioManager.Audio.PlayLobbyMusic();
     }
 
 

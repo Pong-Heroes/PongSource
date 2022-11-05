@@ -25,8 +25,6 @@ public class GameManager : MonoBehaviour
     {
         get { return currentState; }
     }
-
-    //Changes the current game state
     public void SetState(System.Type newStateType)
     {
         if (currentState != null)
